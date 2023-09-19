@@ -9,7 +9,7 @@ SELECT * FROM animals WHERE NAME LIKE '%_mon';
 -- List the name of all animals born between 2016 and 2019:
 
 SELECT name FROM animals WHERE date_of_birth >= '2016-01-01' 
- AND  date_of_birth <  '2019-01-01';
+ AND  date_of_birth <=  '2019-12-31';
 
 -----------------------------------------------------------
 
