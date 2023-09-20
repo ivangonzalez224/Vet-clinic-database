@@ -20,3 +20,21 @@ INSERT INTO animals (NAME,DATE_OF_BIRTH,ESCAPE_ATTEMPTS,neutered,WEIGHT_KG) VALU
    ('Ditto', '2022-05-14', 4, TRUE, 22.00 );
 
 SELECT * FROM animals;
+
+/* Populate owners table with provided data. */
+INSERT INTO owners (full_name,age) VALUES 
+   ('Sam Smith', 34 ),
+   ('Jennifer Orwell', 19),
+   ('Bob', 45),
+   ('Melody Pond', 77),
+   ('Dean Winchester', 14),
+   ('Jodie Whittaker', 38);
+
+SELECT * FROM owners;
+
+/* Populate species table with provided data. */
+INSERT INTO species (name) VALUES 
+   ('Pokemon'),
+   ('Digimon');
+
+SELECT * FROM species;

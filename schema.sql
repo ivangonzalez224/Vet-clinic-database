@@ -31,7 +31,7 @@ CREATE TABLE species (
 -- Modify animals table
 -- Add species_id column as a species table foreign key
 ALTER TABLE animals  
-DROP COLUMN species_id;
+DROP COLUMN species;
 ALTER TABLE animals
 ADD COLUMN species_id INT;
 ALTER TABLE animals 
