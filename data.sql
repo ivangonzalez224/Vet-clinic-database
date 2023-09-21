@@ -38,3 +38,9 @@ INSERT INTO species (name) VALUES
    ('Digimon');
 
 SELECT * FROM species;
+
+-- Update animals table by inserting species_id values
+BEGIN;
+UPDATE animals SET species_id = 2 WHERE NAME LIKE '%_mon';
+UPDATE animals SET species_id = 1 WHERE species_id IS NULL;
+COMMIT;
