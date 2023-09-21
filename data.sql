@@ -111,3 +111,12 @@ SET owner_id = (
 WHERE NAME = 'Angemon' OR NAME = 'Boarmon';
 COMMIT;
 SELECT * FROM animals;
+
+-----------------------------------------------------
+
+-- Insert data into the vets table
+INSERT INTO vets (NAME,AGE,DATE_OF_GRADUATION) VALUES 
+   ('William Tatcher', 45, '2000-04-23'),
+   ('Maisy Smith', 26, '2019-06-17'),
+   ('Stephanie Mendez', 64, '1981-05-04'),
+   ('Jack Harkness', 38, '2008-06-08');
