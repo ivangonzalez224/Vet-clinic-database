@@ -44,3 +44,70 @@ BEGIN;
 UPDATE animals SET species_id = 2 WHERE NAME LIKE '%_mon';
 UPDATE animals SET species_id = 1 WHERE species_id IS NULL;
 COMMIT;
+
+-- Update animals table by inserting owners_id values
+BEGIN;
+UPDATE animals
+SET owner_id = (
+	SELECT
+		id
+	FROM
+		owners
+	WHERE
+		full_name = 'Sam Smith'
+)
+WHERE NAME = 'Agumon';
+COMMIT;
+
+BEGIN;
+UPDATE animals
+SET owner_id = (
+	SELECT
+		id
+	FROM
+		owners
+	WHERE
+		full_name = 'Jennifer Orwell'
+)
+WHERE NAME = 'Gabumon' OR NAME = 'Pikachu';
+COMMIT;
+
+BEGIN;
+UPDATE animals
+SET owner_id = (
+	SELECT
+		id
+	FROM
+		owners
+	WHERE
+		full_name = 'Bob'
+)
+WHERE NAME = 'Devimon' OR NAME = 'Plantmon';
+COMMIT;
+
+BEGIN;
+UPDATE animals
+SET owner_id = (
+	SELECT
+		id
+	FROM
+		owners
+	WHERE
+		full_name = 'Melody Pond'
+)
+WHERE NAME = 'Charmander' OR NAME = 'Squirtle' OR NAME = 'Blossom';
+COMMIT;
+
+BEGIN;
+UPDATE animals
+SET owner_id = (
+	SELECT
+		id
+	FROM
+		owners
+	WHERE
+		full_name = 'Dean Winchester'
+)
+WHERE NAME = 'Angemon' OR NAME = 'Boarmon';
+COMMIT;
+SELECT * FROM animals;
