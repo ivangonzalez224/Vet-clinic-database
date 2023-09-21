@@ -120,3 +120,17 @@ INSERT INTO vets (NAME,AGE,DATE_OF_GRADUATION) VALUES
    ('Maisy Smith', 26, '2019-06-17'),
    ('Stephanie Mendez', 64, '1981-05-04'),
    ('Jack Harkness', 38, '2008-06-08');
+
+-- Insert data into the specializations table
+INSERT INTO specializations (specie_id, vet_id)
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Pokemon' AND vets.name = 'William Tatcher'
+UNION
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Digimon' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Pokemon' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Digimon' AND vets.name = 'Jack Harkness';
