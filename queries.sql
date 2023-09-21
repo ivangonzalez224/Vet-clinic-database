@@ -130,7 +130,7 @@ AND  date_of_birth <=  '2000-12-31' GROUP BY species;
 ------------------------------------------------------------------
 
 -- What animals belong to Melody Pond?
-SELECT NAME, full_name
+SELECT NAME AS animal_name, full_name AS owner_name
 FROM animals
 INNER JOIN owners
 ON animals.owner_id = owners.id
@@ -144,7 +144,7 @@ ON animals.species_id = species.id
 WHERE species.name = 'Pokemon';
 
 -- List all owners and their animals, including those that don't own any animal.
-SELECT full_name, name  
+SELECT full_name AS owner_name, name AS animal_name
 FROM owners 
 LEFT JOIN animals 
 ON animals.owner_id = owners.id;
