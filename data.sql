@@ -195,4 +195,4 @@ SELECT animals.id, vets.id, to_date('2020-05-24', 'YYYY-MM-DD') FROM animals, ve
 WHERE animals.name = 'Blossom' AND vets.name = 'Stephanie Mendez'
 UNION
 SELECT animals.id, vets.id, to_date('2021-01-11', 'YYYY-MM-DD') FROM animals, vets
-WHERE animals.name = 'Blossom' AND vets.name = 'Stephanie Mendez';
+WHERE animals.name = 'Blossom' AND vets.name = 'William Tatcher';
