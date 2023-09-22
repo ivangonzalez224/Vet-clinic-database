@@ -111,3 +111,88 @@ SET owner_id = (
 WHERE NAME = 'Angemon' OR NAME = 'Boarmon';
 COMMIT;
 SELECT * FROM animals;
+
+-----------------------------------------------------
+
+-- Insert data into the vets table
+INSERT INTO vets (NAME,AGE,DATE_OF_GRADUATION) VALUES 
+   ('William Tatcher', 45, '2000-04-23'),
+   ('Maisy Smith', 26, '2019-06-17'),
+   ('Stephanie Mendez', 64, '1981-05-04'),
+   ('Jack Harkness', 38, '2008-06-08');
+
+-- Insert data into the specializations table
+INSERT INTO specializations (specie_id, vet_id)
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Pokemon' AND vets.name = 'William Tatcher'
+UNION
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Digimon' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Pokemon' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT species.id, vets.id FROM species, vets
+WHERE species.name = 'Digimon' AND vets.name = 'Jack Harkness';
+
+-- Insert data into the visits table
+INSERT INTO visits (animal_id, vet_id, date_of_visit)
+SELECT animals.id, vets.id, to_date('2020-05-24', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Agumon' AND vets.name = 'William Tatcher'
+UNION
+SELECT animals.id, vets.id, to_date('2020-07-22', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Agumon' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT animals.id, vets.id, to_date('2021-02-02', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Gabumon' AND vets.name = 'Jack Harkness'
+UNION
+SELECT animals.id, vets.id, to_date('2020-01-05', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Pikachu' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2020-03-08', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Pikachu' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2020-05-14', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Pikachu' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2021-05-04', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Devimon' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT animals.id, vets.id, to_date('2021-02-24', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Charmander' AND vets.name = 'Jack Harkness'
+UNION
+SELECT animals.id, vets.id, to_date('2019-12-21', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Plantmon' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2020-08-10', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Plantmon' AND vets.name = 'William Tatcher'
+UNION
+SELECT animals.id, vets.id, to_date('2021-04-07', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Plantmon' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2019-09-29', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Squirtle' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT animals.id, vets.id, to_date('2020-10-03', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Angemon' AND vets.name = 'Jack Harkness'
+UNION
+SELECT animals.id, vets.id, to_date('2020-11-04', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Angemon' AND vets.name = 'Jack Harkness'
+UNION
+SELECT animals.id, vets.id, to_date('2019-01-24', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Boarmon' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2019-05-15', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Boarmon' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2020-02-27', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Boarmon' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2020-08-03', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Boarmon' AND vets.name = 'Maisy Smith'
+UNION
+SELECT animals.id, vets.id, to_date('2020-05-24', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Blossom' AND vets.name = 'Stephanie Mendez'
+UNION
+SELECT animals.id, vets.id, to_date('2021-01-11', 'YYYY-MM-DD') FROM animals, vets
+WHERE animals.name = 'Blossom' AND vets.name = 'William Tatcher';
