@@ -280,3 +280,6 @@ WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name, vets.name
 ORDER BY total_visits_get DESC
 LIMIT 1;
+
+-- Create index for the animal_id column
+CREATE INDEX animals_index ON visits(animal_id);
