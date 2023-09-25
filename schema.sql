@@ -75,3 +75,8 @@ CREATE TABLE visits (
   CONSTRAINT FK_VISITS_ANIMAL_ID FOREIGN KEY (animal_id) REFERENCES animals(id),
   CONSTRAINT FK_VISITS_VET_ID FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
+
+--------------------------------------------------------------------------------
+
+-- Add an email column to the owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
