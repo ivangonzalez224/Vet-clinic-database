@@ -96,6 +96,11 @@ Use this project as a guide to create a data base and to manage the data from th
 - Twitter: [@ivang2204](https://twitter.com/ivang2204)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/iván-gonzalez-robles-957491275)
 
+👤 **Bruno Kambere**
+
+- GitHub: [@kambereBr](https://github.com/kambereBr)
+- Twitter: [@kambereBr](https://twitter.com/kambereBr)
+- LinkedIn: [bruno kambere](https://www.linkedin.com/in/bruno-kambere/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
