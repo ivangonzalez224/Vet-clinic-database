@@ -283,3 +283,6 @@ LIMIT 1;
 
 -- Create index for the animal_id column
 CREATE INDEX animals_index ON visits(animal_id);
+
+-- Create index for the vet_id colunm in the visits table
+CREATE INDEX vet_id_index ON visits (vet_id);
